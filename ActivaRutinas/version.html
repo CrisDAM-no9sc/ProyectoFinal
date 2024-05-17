@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>ActivaRutina</title>
+    <style>
+        
+        .resources {
+            margin-top: 10px;
+            padding: 40px 0;
+            
+        }
+        .resources h2 {
+            margin-top: 1rem;
+            margin-bottom: 5rem;
+            text-align: center;
+        }
+        .col-md-6 h3{
+          text-transform: capitalize;
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+        .resources .list-group-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: linear-gradient(120deg, #f55940, #eb8c48);
+            border-radius: 0 1.2rem;
+            border: 1px solid #e9ecef;
+            box-shadow: 0px 0px 11px 1px #0e373f26;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        .resources .list-group-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 15px 1px #0e373f40;
+        }
+        .resources .list-group-item h5 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .resources .list-group-item p {
+            margin: 0;
+        }
+        .modal-content {
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0px 0px 11px 1px #0e373f26;
+            border-radius: 0 1.2rem;
+        }
+       .btn{
+          border:none;
+          display: inline-block;
+          background: linear-gradient(330deg, #f55940, #eb8c48);
+          background-size: 120% 120%;
+          border-radius: var(--border-radius);
+          color: var(--white-color);
+          padding: .9rem 2rem;
+          font-weight: var(--font-semi-bold);
+          transition: .3s;
+       }
+       .btn:hover{
+          background: linear-gradient(120deg, #f55940, #eb8c48);
+          scale: 1.1;
+          border-radius: 0 1.2rem;
+       }
+    </style>
+</head>
+<body>
+  <header class="header" id="header">
+    <nav class="nav container">
+        <a href="#" class="nav_logo">ActivaRutina</a>
+        <div class="nav_menu" id="nav-menu">
+            <ul class="nav_list">
+                <li class="nav_item"><a href="probando.php" class="nav_link active-link">HOME</a></li>
+                <li class="nav_item"><a href="#services" class="nav_link">SERVICIOS</a></li>
+                <li class="nav_item"><a href="#testimonial" class="nav_link">OPINIONES</a></li>
+                <li class="nav_item"><a href="#projects" class="nav_link">LO MÁS</a></li>
+                <li class="nav_item"><a href="#contact" class="nav_link">CONTACTO</a></li>
+            </ul>
+            <i class="fa-solid fa-xmark nav_close" id="nav-close"></i>
+        </div>
+        <div class="nav_toggle" id="nav-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+</header>
+<main class="main">
+    <!--==================== HOME ====================-->
+    <section class="home" id="home">
+        <div class="home_container container grid">
+            <div class="home_data">
+                <h3 class="home_data-subtitle"></h3>
+                <h1 class="home_data-title">Activate <b>durante las</b><br>Rutinas</h1>
+                <span class="home_data-description">
+                    Esta diseñada para ayudarte a mantenerte activo y saludable en tu día a día. 
+                    Ofrece una combinación de consejos sobre deporte, dieta saludable y rutinas de ejercicio que puedes realizar en casa 
+                    para hacer que tu día sea más llevadero y aprovechar las horas vacías de manera saludable.
+                </span>
+                <a download="" href="assets/cv/Joey-CV.pdf" class="button">Descargar CV</a>
+            </div>
+            <div class="home_img">
+                <img src="assets/img/principal.png" alt="">
+                <div class="home_img-border"></div>
+            </div>
+            <div class="home_social">
+                <a href="https://www.facebook.com/" target="_blank" class="home_social-link"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank" class="home_social-link"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com/" target="_blank" class="home_social-link"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- Section de Recursos -->
+    <section class="resources" id="resources">
+      <div class="container">
+          <h2>Recursos para Descubrir tu Mejor Versión</h2>
+          <div class="row">
+              <!-- Recursos Educativos -->
+              <div class="col-md-6">
+                  <h3>Recursos Educativos</h3>
+                  <ul class="list-group">
+                      <li class="list-group-item" data-toggle="modal" data-target="#nutritionGuideModal">
+                          <h5>Guía de Nutrición</h5>
+                          <p>Aprende a nutrir tu cuerpo adecuadamente con nuestra guía de nutrición completa, que incluye planes de alimentación, recetas saludables y consejos para una dieta equilibrada.</p>
+                      </li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#workoutVideosModal">
+                          <h5>Videos de Entrenamiento</h5>
+                          <p>Sigue nuestras rutinas de ejercicio con videos detallados que te muestran la forma correcta de realizar cada movimiento, asegurando entrenamientos efectivos y seguros.</p>
+                      </li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#healthArticlesModal">
+                          <h5>Artículos de Salud</h5>
+                          <p>Explora una variedad de artículos sobre salud y bienestar, que cubren temas desde la importancia del sueño hasta la gestión del estrés y mucho más.</p>
+                      </li>
+                  </ul>
+              </div>
+
+              <!-- Herramientas -->
+              <div class="col-md-6">
+                  <h3>Herramientas</h3>
+                  <ul class="list-group">
+                      <li class="list-group-item" data-toggle="modal" data-target="#bmiCalculatorModal">
+                          <h5>Calculadora de IMC</h5>
+                          <p>Utiliza nuestra calculadora de Índice de Masa Corporal para evaluar tu peso en relación con tu altura y establecer objetivos de peso saludables.</p>
+                      </li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#workoutPlannerModal">
+                          <h5>Planificador de Entrenamientos</h5>
+                          <p>Organiza tus sesiones de ejercicio con nuestro planificador de entrenamientos, que te permite programar y realizar un seguimiento de tus actividades físicas diarias y semanales.</p>
+                      </li>
+                      <li class="list-group-item" data-toggle="modal" data-target="#trackingAppModal">
+                          <h5>App de Seguimiento</h5>
+                          <p>Descarga nuestra aplicación móvil para llevar un registro detallado de tus progresos, recibir notificaciones de entrenamientos y acceder a todos nuestros recursos desde tu smartphone.</p>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Modales -->
+  <div class="modal fade" id="nutritionGuideModal" tabindex="-1" aria-labelledby="nutritionGuideModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="nutritionGuideModalLabel">Guía de Nutrición</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>Contenido de la guía de nutrición...</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="workoutVideosModal" tabindex="-1" aria-labelledby="workoutVideosModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="workoutVideosModalLabel">Videos de Entrenamiento</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>Contenido de los videos de entrenamiento...</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="healthArticlesModal" tabindex="-1" aria-labelledby="healthArticlesModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="healthArticlesModalLabel">Artículos de Salud</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>Contenido de los artículos de salud...</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="bmiCalculatorModal" tabindex="-1" aria-labelledby="bmiCalculatorModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="bmiCalculatorModalLabel">Calculadora de IMC</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form id="bmiForm">
+                      <div class="form-group">
+                          <label for="weight">Peso (kg):</label>
+                          <input type="number" id="weight" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="height">Altura (cm):</label>
+                          <input type="number" id="height" class="form-control" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Calcular IMC</button>
+                  </form>
+                  <div id="bmiResult" class="mt-3"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="workoutPlannerModal" tabindex="-1" aria-labelledby="workoutPlannerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="workoutPlannerModalLabel">Planificador de Entrenamientos</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <form id="workoutForm">
+                      <div class="form-group">
+                          <label for="exercise">Ejercicio:</label>
+                          <input type="text" id="exercise" class="form-control" required>
+                      </div>
+                      <div class="form-group">
+                          <label for="date">Fecha:</label>
+                          <input type="date" id="date" class="form-control" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Agregar Sesión</button>
+                  </form>
+                  <div id="workoutList" class="mt-3"></div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="modal fade" id="trackingAppModal" tabindex="-1" aria-labelledby="trackingAppModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="trackingAppModalLabel">App de Seguimiento</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                  <p>Contenido de la app de seguimiento...</p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  </main>
+    <!--==================================== FOOTER =========================0============-->
+    <footer class="footer section">
+      <div class="footer_container container grid">
+        <div class="footer_content grid">
+          <div>
+            <h3 class="footer_title">ActivaRutinas</h3>
+          </div>
+          <div class="footer_data">
+            <a href="#services" class="footer_link">SERVICIOS</a>
+            <a href="#testimonial" class="footer_link">OPINIONES</a>
+            <a href="#projects" class="footer_link">LO MÁS</a>
+            <a href="#contact" class="footer_link">CONTACTO</a>
+          </div>
+          <div class="footer_social-container">
+            <a href="https://www.facebook.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer_rights">
+          <p class="footer_copy">
+            &#169; 2024 Creación Empresa Solidaria
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="fa-solid fa-arrow-up scrollup_icon"></i>
+     </a>    
+    <!-- Script de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/version.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>ActivaRutina</title>
+    <style>
+        .exercise-list {
+            margin-top: 4rem;
+            padding: 20px;
+            margin-bottom: 3rem;
+        }
+        .exercise-list h3 {
+            margin-top: 2rem;
+        }
+        .exercise-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .exercise-list ul li {
+            background: linear-gradient(330deg, #f55940, #eb8c48);
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 1.2rem 0;
+            color:#f8f9fa;
+            font-size: x-large;
+        }
+
+        .program-selector {
+            margin-top: 5rem;
+            text-align: center;
+        }
+        
+        /* Estilos para el menú desplegable */
+        .nav_menu {
+            display: none;
+        }
+
+        .show-menu {
+            display: block;
+        }
+
+        .form_group{
+          margin-bottom: 3rem;
+        }
+        
+
+        @media screen and (min-width: 768px) {
+            .nav_menu {
+                display: block;
+            }
+
+            .nav_toggle,
+            .nav_close {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!--==================== HEADER NAVEGACION ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav_logo">ActivaRutina</a>
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list">
+            <li class="nav_item">
+              <a href="probando.php" class="nav_link active-link">HOME</a>
+            </li>
+            <li class="nav_item">
+              <a href="#services" class="nav_link">SERVICIOS</a>
+            </li>
+            <li class="nav_item">
+              <a href="#testimonial" class="nav_link">OPINIONES</a>
+            </li>
+            <li class="nav_item">
+              <a href="#projects" class="nav_link">LO MÁS</a>
+            </li>
+            <li class="nav_item">
+              <a href="#contact" class="nav_link">CONTACTO</a>
+            </li>
+          </ul>
+          <i class="fa-solid fa-xmark nav_close" id="nav-close"></i>
+        </div>
+
+        <!-- MENU ICONO MOVIL -->
+        <div class="nav_toggle" id="nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home" id="home">
+        <div class="home_container container grid">
+          <div class="home_data">
+            <h3 class="home_data-subtitle"></h3>
+            <h1 class="home_data-title">
+              Entrenamiento total en casa
+            </h1>
+            <span class="home_data-description">
+                Nuestro programa te ofrece una solución completa para ponerte en forma desde la 
+                comodidad de tu casa. Incluye ejercicios de fuerza con peso corporal y equipos básicos como mancuernas, 
+                entrenamiento cardiovascular con actividades dinámicas como saltos y burpees, y estiramientos para mejorar tu flexibilidad.
+                 Recibirás planes de rutina personalizados para tu nivel de fitness, ya seas principiante o avanzado. Disfruta de la comodidad y flexibilidad de entrenar 
+                en cualquier momento, ahorra tiempo y dinero, y obtén resultados reales. ¡Empieza hoy y siente la diferencia!
+            </span>
+          </div>
+          <div class="home_img">
+            <img src="assets/img/foto_ejercicios.png" alt="">
+            <div class="home_img-border"></div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="program-selector" id="program-selector">
+        <div class="container">
+          <h2>Selecciona tu Programa de Entrenamiento</h2>
+          <form>
+            <div class="form-group">
+              <label for="program-level">Tipo de Entrenamiento:</label>
+              <select class="form-control" id="program-type" name="program-type" onchange="showExercises(this.value)">
+                <option value="weight-loss">Pérdida de peso</option>
+                <option value="legs-glutes">Piernas y glúteos</option>
+                <option value="relax-stretch">Relajación y estiramientos</option>
+              </select>
+            </div>
+          </form>
+          <div id="exercise-list" class="exercise-list">
+            <!-- Ejercicios recomendados se mostrarán aquí -->
+          </div>
+          <div id="exercise-video" class="exercise-video">
+            <!-- Video de los ejercicios se mostrará aquí -->
+          </div>
+        </div>
+      </section>
+    </main>      
+
+    <!--==================================== FOOTER =========================0============-->
+    <footer class="footer section">
+      <div class="footer_container container grid">
+        <div class="footer_content grid">
+          <div>
+            <h3 class="footer_title">ActivaRutinas</h3>
+          </div>
+          <div class="footer_data">
+            <a href="#services" class="footer_link">SERVICIOS</a>
+            <a href="#testimonial" class="footer_link">OPINIONES</a>
+            <a href="#projects" class="footer_link">LO MÁS</a>
+            <a href="#contact" class="footer_link">CONTACTO</a>
+          </div>
+          <div class="footer_social-container">
+            <a href="https://www.facebook.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" class="footer_social">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+        <div class="footer_rights">
+          <p class="footer_copy">
+            &#169; 2024 Creación Empresa Solidaria
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!--========== SCROLL UP ==========-->
+     <a href="#" class="scrollup" id="scroll-up">
+      <i class="fa-solid fa-arrow-up scrollup_icon"></i>
+     </a>    
+    
+    <!--=============== SCROLL REVEAL===============-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--=============== SWIPER JS ===============-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js"></script>
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/ejercicios.js"></script>
+    
+  </body>
+</html>
