@@ -9,68 +9,97 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>ActivaRutina</title>
     <style>
-        .exercise-list {
-            margin-top: 4rem;
-            padding: 20px;
-            margin-bottom: 3rem;
-        }
-        .exercise-list h3 {
-            margin-top: 2rem;
-        }
-        .exercise-list ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .exercise-list ul li {
-            background: linear-gradient(330deg, #f55940, #eb8c48);
-            margin-bottom: 10px;
-            padding: 10px;
-            border-radius: 1.2rem 0;
-            color:#f8f9fa;
-            font-size: x-large;
-        }
-
-        .program-selector {
-            margin-top: 5rem;
-            text-align: center;
-        }
-        
-        /* Estilos para el menú desplegable */
-        .nav_menu {
-            display: none;
-        }
-
-        .show-menu {
-            display: block;
-        }
-
-        .form_group{
-          margin-bottom: 3rem;
-        }
-        
-
-        @media screen and (min-width: 768px) {
-            .nav_menu {
-                display: block;
+              .todo-container {
+                max-width: 600px;
+                margin: 100px auto;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
-
-            .nav_toggle,
-            .nav_close {
-                display: none;
+            
+            .todo-container h2 {
+                text-align: center;
+                margin-bottom: 2rem;
+                font-size: 1.8rem;
+                color: #555;
             }
-        }
+            
+            .todo-container .form-group {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            }
+            
+            .todo-container .form-control {
+                flex: 1;
+                margin-right: 10px;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+            }
+            
+            .todo-container .btn {
+                padding: 10px 20px;
+                border: none;
+                background-color: #f55940;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            
+            .todo-container .btn:hover {
+                background-color: #eb8c48;
+            }
+            
+            .todo-container ul {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .todo-container ul li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px;
+                background-color: #f8f9fa;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                transition: transform 0.2s;
+            }
+            
+            .todo-container ul li:hover {
+                transform: scale(1.02);
+            }
+            
+            .todo-container ul li .task-name {
+                flex: 1;
+                margin-left: 10px;
+            }
+            
+            .todo-container ul li .delete-task {
+                color: red;
+                cursor: pointer;
+            }
+            
+            .completed {
+                text-decoration: line-through;
+                color: #888;
+            }
     </style>
 </head>
 <body>
     <!--==================== HEADER NAVEGACION ====================-->
     <header class="header" id="header">
       <nav class="nav container">
-        <a href="#" class="nav_logo">ActivaRutina</a>
+        <a href="#" class="nav_logo">AtivaRutina</a>
         <div class="nav_menu" id="nav-menu">
           <ul class="nav_list">
             <li class="nav_item">
-              <a href="probando.php" class="nav_link active-link">HOME</a>
+              <a href="index.php" class="nav_link active-link">HOME</a>
             </li>
+           
             <li class="nav_item">
               <a href="#services" class="nav_link">SERVICIOS</a>
             </li>
@@ -83,11 +112,12 @@
             <li class="nav_item">
               <a href="#contact" class="nav_link">CONTACTO</a>
             </li>
+
           </ul>
           <i class="fa-solid fa-xmark nav_close" id="nav-close"></i>
         </div>
 
-        <!-- MENU ICONO MOVIL -->
+        <!------------    MENU ICONO MOBIL    ------------>
         <div class="nav_toggle" id="nav-toggle">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -100,46 +130,34 @@
           <div class="home_data">
             <h3 class="home_data-subtitle"></h3>
             <h1 class="home_data-title">
-              Entrenamiento total en casa
+                TODO List - Mejora Física y Salud
             </h1>
             <span class="home_data-description">
-                Nuestro programa te ofrece una solución completa para ponerte en forma desde la 
-                comodidad de tu casa. Incluye ejercicios de fuerza con peso corporal y equipos básicos como mancuernas, 
-                entrenamiento cardiovascular con actividades dinámicas como saltos y burpees, y estiramientos para mejorar tu flexibilidad.
-                 Recibirás planes de rutina personalizados para tu nivel de fitness, ya seas principiante o avanzado. Disfruta de la comodidad y flexibilidad de entrenar 
-                en cualquier momento, ahorra tiempo y dinero, y obtén resultados reales. ¡Empieza hoy y siente la diferencia!
+                Descubre nuestra nueva TODO list diseñada para ayudarte a organizar y gestionar tus tareas relacionadas
+                con la mejora de tu salud y forma física. Con esta herramienta, podrás agregar, eliminar y seguir tus progresos
+                en diversas actividades que contribuyen a adoptar un estilo de vida saludable. Ya sea que necesites recordar tus
+                sesiones de ejercicio, planificar tus comidas o llevar un seguimiento de tus hábitos, nuestra TODO list te proporciona una forma sencilla
+                y efectiva de mantenerte enfocado en tus objetivos de salud. ¡Empieza hoy mismo y da un paso más hacia una mejor versión de ti!
             </span>
           </div>
           <div class="home_img">
-            <img src="assets/img/foto_ejercicios.png" alt="">
+            <img src="assets/img/todolist.png" alt="">
             <div class="home_img-border"></div>
           </div>
         </div>
       </section>
       
-      <section class="program-selector" id="program-selector">
-        <div class="container">
-          <h2>Selecciona tu Programa de Entrenamiento</h2>
-          <form>
-            <div class="form-group">
-              <label for="program-level">Tipo de Entrenamiento:</label>
-              <select class="form-control" id="program-type" name="program-type" onchange="showExercises(this.value)">
-                <option value="weight-loss">Pérdida de peso</option>
-                <option value="legs-glutes">Piernas y glúteos</option>
-                <option value="relax-stretch">Relajación y estiramientos</option>
-              </select>
-            </div>
-          </form>
-          <div id="exercise-list" class="exercise-list">
-            <!-- Ejercicios recomendados se mostrarán aquí -->
-          </div>
-          <div id="exercise-video" class="exercise-video">
-            <!-- Video de los ejercicios se mostrará aquí -->
-          </div>
-        </div>
-      </section>
     </main>      
-
+    <!--==================== TODO LIST ===================-->
+    <div class="todo-container">
+      <h2>To-Do List</h2>
+      <div class="form-group">
+          <input type="text" id="task-input" class="form-control" placeholder="Agregar nueva tarea...">
+          <button id="add-task-btn" class="btn">Añadir</button>
+      </div>
+      <ul id="task-list"></ul>
+      <button id="download-pdf-btn" class="btn" style="margin-top: 20px;">Descargar PDF</button>
+  </div>
     <!--==================================== FOOTER =========================0============-->
     <footer class="footer section">
       <div class="footer_container container grid">
@@ -148,6 +166,9 @@
             <h3 class="footer_title">ActivaRutinas</h3>
           </div>
           <div class="footer_data">
+            <!---
+            <a href="#home" class="footer_link"> HOME</a>
+          -->
             <a href="#services" class="footer_link">SERVICIOS</a>
             <a href="#testimonial" class="footer_link">OPINIONES</a>
             <a href="#projects" class="footer_link">LO MÁS</a>
@@ -185,8 +206,10 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <!--=============== SWIPER JS ===============-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/ejercicios.js"></script>
-    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/todo.js"></script>
   </body>
 </html>

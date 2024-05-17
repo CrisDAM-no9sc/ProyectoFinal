@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $conn->close(); // Cerrar la conexión a la base de datos
-echo '<script>setTimeout(function() { window.location.href = "probando.php"; }, 3000);</script>';
+echo '<script>setTimeout(function() { window.location.href = "index.php"; }, 3000);</script>';
 ?>
 
 <!DOCTYPE html>

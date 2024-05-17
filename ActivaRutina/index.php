@@ -23,10 +23,10 @@
                 <a href="#services" class="nav_link">SERVICIOS</a>
               </li>
               <li class="nav_item">
-                <a href="#testimonial" class="nav_link">TESTIMONIO</a>
+                <a href="#testimonial" class="nav_link">OPINIONES</a>
               </li>
               <li class="nav_item">
-                <a href="#projects" class="nav_link">PROYECTOS</a>
+                <a href="#projects" class="nav_link">LO MÁS</a>
               </li>
               <li class="nav_item">
                 <a href="#contact" class="nav_link">CONTACTO</a>
@@ -301,11 +301,11 @@
               <h3 class="footer_title">ActivaRutinas</h3>
             </div>
             <div class="footer_data">
-              <a href="#about" class="footer_link"> About</a>
-              <a href="#services" class="footer_link">Servicios</a>
-              <a href="#testimonial" class="footer_link">Testimonios</a>
-              <a href="#projects" class="footer_link">Proyectos</a>
-              <a href="#contact" class="footer_link">Contacto</a>
+              
+              <a href="#services" class="footer_link">SERVICIOS</a>
+              <a href="#testimonial" class="footer_link">OPINIONES</a>
+              <a href="#projects" class="footer_link">LO MÁS</a>
+              <a href="#contact" class="footer_link">CCONTACTO</a>
             </div>
             <div class="footer_social-container">
               <a href="https://www.facebook.com/" target="_blank" class="footer_social">
